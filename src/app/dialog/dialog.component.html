@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>הוספת לקוח חדש</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="outline">
+        <mat-label>שם לקוח</mat-label>
+        <input matInput placeholder="הקלד שם">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>ת"ז לקוח</mat-label>
+        <input matInput placeholder="הקלד תעודת זהות">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>בחר סוג מוצר </mat-label>
+        <mat-select placeholder="תוכנות">
+            <mat-option value="">תוכנת ניהול</mat-option>
+            <mat-option value="">תוכנת שיווק</mat-option>
+            <mat-option value="">תוכנת ריגול</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>תיאור</mat-label>
+        <input matInput placeholder="הקלד תעודת זהות">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>מחיר </mat-label>
+        <input matInput placeholder="הקלד תעודת זהות">
+    </mat-form-field>
+
+   
+
+
+
+
+
+    <mat-form-field appearance="outline">
+        <mat-label>בחר אופן תשלום</mat-label>
+        <mat-select placeholder="תוכנות">
+            <mat-option value="">תשלום חד-פעמי</mat-option>
+            <mat-option value="">הוראת קבע</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>תאריך ביצוע הקנייה</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label> הערות </mat-label>
+        <input matInput placeholder="הקלד תעודת זהות">
+    </mat-form-field>
+
+</div>
+

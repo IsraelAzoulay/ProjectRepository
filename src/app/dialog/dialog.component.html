@@ -1,5 +1,6 @@
-<h1 mat-dialog-title>הוספת לקוח חדש</h1>
+<h1 mat-dialog-title >הוספת לקוח חדש</h1>
 <div mat-dialog-content>
+   <form [formGroup]="clientForm">
     <mat-form-field appearance="outline">
         <mat-label>שם לקוח</mat-label>
         <input matInput placeholder="הקלד שם">
@@ -21,27 +22,19 @@
 
     <mat-form-field appearance="outline">
         <mat-label>תיאור</mat-label>
-        <input matInput placeholder="הקלד תעודת זהות">
+        <input matInput placeholder="הקלד תיאור המוצר">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>מחיר </mat-label>
-        <input matInput placeholder="הקלד תעודת זהות">
+        <input matInput type="number" placeholder="הקלד מחיר">
     </mat-form-field>
 
-   
-
-
-
-
-
-    <mat-form-field appearance="outline">
-        <mat-label>בחר אופן תשלום</mat-label>
-        <mat-select placeholder="תוכנות">
-            <mat-option value="">תשלום חד-פעמי</mat-option>
-            <mat-option value="">הוראת קבע</mat-option>
-        </mat-select>
-    </mat-form-field>
+    <mat-radio-group class="example-radio-group" aria-label="Select an option">
+        <mat-label>:בחר אופן תשלום</mat-label>
+        <mat-radio-button class="example-radio-botton" value="1">תשלום חד-פעמי</mat-radio-button>
+        <mat-radio-button class="example-radio-botton" value="2">הוראת קבע</mat-radio-button>
+    </mat-radio-group>
 
     <mat-form-field appearance="fill">
         <mat-label>תאריך ביצוע הקנייה</mat-label>
@@ -52,8 +45,14 @@
 
     <mat-form-field appearance="outline">
         <mat-label> הערות </mat-label>
-        <input matInput placeholder="הקלד תעודת זהות">
+        <textarea matInput></textarea>
+        <input matInput placeholder="הקלד">
     </mat-form-field>
+   </form>
+</div>
 
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button mat-raised-button color="primary" style="margin-left: 8px;">Save</button>
 </div>
 

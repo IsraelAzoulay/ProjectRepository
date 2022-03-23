@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -7,15 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent implements OnInit {
+  clientForm!:FormGroup;
 
-  constructor() { }
-  
-  paymentType:string[]=['תשלום חד-פעמי', 'הוראת קבע'];
+  constructor(private formBuilder: FormBuilder) { 
+    
+  }
 
   ngOnInit(): void {
-   
+   this.clientForm=this.formBuilder.group({
+    clientName:['', Validators.required],
+    clientId:['',Validators.required],
+    productType:['',Validators.required],
+    description:['',Validators.required],
+    price:['',Validators.required],
+    paymentMethod:['',Validators.required],
+    purchaseDate:['',Validators.required],
+    comment:['',Validators.required]
+   })
+
 
   }
 
 
+  
 }

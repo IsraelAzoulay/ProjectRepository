@@ -7,6 +7,15 @@
   <span>:ניהול לקוחות</span>
 </mat-toolbar>
 
+
+<button class="example-button-row" mat-button [matMenuTriggerFor]="menu" style="color: blue;">תפריט</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="openDialog()" style="color:blue;" >הוספת לקוח</button>
+  <button mat-menu-item  style="color:blue;">תקציב</button>
+</mat-menu>
+
+<!--
 <div class="example-button-row">
   <button mat-button (click)="openDialog()" mat-raised-button color="warn">הוספת לקוח</button>
 </div>
+-->

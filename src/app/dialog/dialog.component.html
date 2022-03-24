@@ -3,34 +3,34 @@
    <form [formGroup]="clientForm">
     <mat-form-field appearance="outline">
         <mat-label>שם לקוח</mat-label>
-        <input matInput placeholder="הקלד שם">
+        <input formControlName="clientName" matInput placeholder="הקלד שם">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>ת"ז לקוח</mat-label>
-        <input matInput placeholder="הקלד תעודת זהות">
+        <input formControlName="clientId" matInput placeholder="הקלד תעודת זהות">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>בחר סוג מוצר </mat-label>
-        <mat-select placeholder="תוכנות">
-            <mat-option value="">תוכנת ניהול</mat-option>
-            <mat-option value="">תוכנת שיווק</mat-option>
-            <mat-option value="">תוכנת ריגול</mat-option>
+        <mat-select formControlName="productType" placeholder="תוכנות">
+            <mat-option value="תוכנת ניהול">תוכנת ניהול</mat-option>
+            <mat-option value="תוכנת שיווק">תוכנת שיווק</mat-option>
+            <mat-option value="תוכנת ריגול">תוכנת ריגול</mat-option>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>תיאור</mat-label>
-        <input matInput placeholder="הקלד תיאור המוצר">
+        <input formControlName="description" matInput placeholder="הקלד תיאור המוצר">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>מחיר </mat-label>
-        <input matInput type="number" placeholder="הקלד מחיר">
+        <input formControlName="price" matInput type="number" placeholder="הקלד מחיר">
     </mat-form-field>
 
-    <mat-radio-group class="example-radio-group" aria-label="Select an option">
+    <mat-radio-group formControlName="paymentMethod" class="example-radio-group" aria-label="Select an option">
         <mat-label>:בחר אופן תשלום</mat-label>
         <mat-radio-button class="example-radio-botton" value="1">תשלום חד-פעמי</mat-radio-button>
         <mat-radio-button class="example-radio-botton" value="2">הוראת קבע</mat-radio-button>
@@ -38,21 +38,19 @@
 
     <mat-form-field appearance="fill">
         <mat-label>תאריך ביצוע הקנייה</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <input formControlName="purchaseDate" matInput [matDatepicker]="picker">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label> הערות </mat-label>
-        <textarea matInput></textarea>
-        <input matInput placeholder="הקלד">
+        <textarea formControlName="comment" matInput></textarea>
     </mat-form-field>
    </form>
 </div>
 
 <div mat-dialog-action [align]="'end'">
     <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-    <button mat-raised-button color="primary" style="margin-left: 8px;">Save</button>
+    <button mat-raised-button color="primary" style="margin-left: 8px;" (click)="addClient()">Save</button>
 </div>
-

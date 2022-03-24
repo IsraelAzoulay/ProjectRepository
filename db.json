@@ -1,0 +1,47 @@
+{
+  "clientList": [
+    {
+      "clientName": "ff",
+      "clientId": "1212",
+      "productType": "תוכנתך שיווק",
+      "description": "dfs",
+      "price": 12,
+      "paymentMethod": "1",
+      "purchaseDate": "2022-03-25T21:00:00.000Z",
+      "comment": "dasda",
+      "id": 1
+    },
+    {
+      "clientName": "ישראל",
+      "clientId": "123456768",
+      "productType": "תוכנת שיווק",
+      "description": "גכדגכ",
+      "price": 12,
+      "paymentMethod": "2",
+      "purchaseDate": "2022-03-30T21:00:00.000Z",
+      "comment": "/דגדשג",
+      "id": 2
+    },
+    {
+      "clientName": "dfsdf",
+      "clientId": "1221",
+      "productType": "תוכנת שיווק",
+      "description": "sdfaf",
+      "price": 12,
+      "paymentMethod": "1",
+      "purchaseDate": "2022-03-30T21:00:00.000Z",
+      "comment": "sdfa",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

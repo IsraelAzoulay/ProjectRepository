@@ -2,16 +2,15 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>supervised_user_circle</mat-icon>
   </button>
-  <span>תוכנת מעקב</span>
+  <span>Managing Program</span>
   <span class="example-spacer"></span>
-  <span>:ניהול לקוחות</span>
+  <span>Managing Customers</span>
 </mat-toolbar>
 
-
-<button class="example-button-row" mat-button [matMenuTriggerFor]="menu" style="color: blue;">תפריט</button>
+<button class="example-button-row" mat-button [matMenuTriggerFor]="menu" style="color: blue;">Menu</button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="openDialog()" style="color:blue;" >הוספת לקוח</button>
-  <button mat-menu-item  style="color:blue;">תקציב</button>
+  <button mat-menu-item (click)="openDialog()" style="color:blue;" >Add Client</button>
+  <button mat-menu-item  style="color:blue;">Budjet</button>
 </mat-menu>
 
 <!--
@@ -19,3 +18,74 @@
   <button mat-button (click)="openDialog()" mat-raised-button color="warn">הוספת לקוח</button>
 </div>
 -->
+
+
+
+<div class="container">
+  <div style="margin-top: 10 px;">
+      <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input>
+      </mat-form-field>
+      
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+      
+          <ng-container matColumnDef="clientName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> client Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.clientName}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="clientID">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> client ID </th>
+            <td mat-cell *matCellDef="let row"> {{row.clientId}}% </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="productType">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Product Type </th>
+            <td mat-cell *matCellDef="let row"> {{row.productType}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+            <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+            <td mat-cell *matCellDef="let row"> {{row.price | currency}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="paymentMethod">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>  Payment Method  </th>
+            <td mat-cell *matCellDef="let row"> {{row.paymentMethod}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="purchaseDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Purchase Date </th>
+            <td mat-cell *matCellDef="let row"> {{row.purchaseDate | date}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="comment">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Comment </th>
+            <td mat-cell *matCellDef="let row"> {{row.comment}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+            <td mat-cell *matCellDef="let row"> {{row.action}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+  </div>
+</div>

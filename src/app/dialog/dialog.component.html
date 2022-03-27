@@ -1,50 +1,50 @@
-<h1 mat-dialog-title >הוספת לקוח חדש</h1>
+<h1 mat-dialog-title >Add new client</h1>
 <div mat-dialog-content>
    <form [formGroup]="clientForm"> 
     <mat-form-field appearance="outline">
-        <mat-label>שם לקוח</mat-label>
-        <input formControlName="clientName" matInput placeholder="הקלד שם">
+        <mat-label>client Name</mat-label>
+        <input formControlName="clientName" matInput placeholder="Type name">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-        <mat-label>ת"ז לקוח</mat-label>
-        <input formControlName="clientId" matInput placeholder="הקלד תעודת זהות">
+        <mat-label>client ID </mat-label>
+        <input formControlName="clientId" matInput placeholder="Type ID number">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-        <mat-label>בחר סוג מוצר </mat-label>
-        <mat-select formControlName="productType" placeholder="תוכנות">
-            <mat-option value="תוכנת ניהול">תוכנת ניהול</mat-option>
-            <mat-option value="תוכנת שיווק">תוכנת שיווק</mat-option>
-            <mat-option value="תוכנת ריגול">תוכנת ריגול</mat-option>
+        <mat-label>Product Type </mat-label>
+        <mat-select formControlName="productType" placeholder="Programs Type">
+            <mat-option value="Managing Program">Managing Program </mat-option>
+            <mat-option value="Budjeting Program"> Budjeting Program</mat-option>
+            <mat-option value="Trucking Program"> Trucking Program</mat-option>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-        <mat-label>תיאור</mat-label>
-        <input formControlName="description" matInput placeholder="הקלד תיאור המוצר">
+        <mat-label>Description</mat-label>
+        <input formControlName="description" matInput placeholder="Type the description">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-        <mat-label>מחיר </mat-label>
-        <input formControlName="price" matInput type="number" placeholder="הקלד מחיר">
+        <mat-label>Price </mat-label>
+        <input formControlName="price" matInput type="number" placeholder="Type Price">
     </mat-form-field>
 
     <mat-radio-group formControlName="paymentMethod" class="example-radio-group" aria-label="Select an option">
-        <mat-label>:בחר אופן תשלום</mat-label>
-        <mat-radio-button class="example-radio-botton" value="1">תשלום חד-פעמי</mat-radio-button>
-        <mat-radio-button class="example-radio-botton" value="2">הוראת קבע</mat-radio-button>
+        <mat-label>Choose Payment Method</mat-label>
+        <mat-radio-button class="example-radio-botton" value="1">One payment</mat-radio-button>
+        <mat-radio-button class="example-radio-botton" value="2">Subscribition</mat-radio-button>
     </mat-radio-group>
 
     <mat-form-field appearance="fill">
-        <mat-label>תאריך ביצוע הקנייה</mat-label>
+        <mat-label> Purchase Date</mat-label>
         <input formControlName="purchaseDate" matInput [matDatepicker]="picker">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-        <mat-label> הערות </mat-label>
+        <mat-label> Comment </mat-label>
         <textarea formControlName="comment" matInput></textarea>
     </mat-form-field>
    </form>

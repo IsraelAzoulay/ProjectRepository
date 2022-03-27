@@ -32,6 +32,17 @@
       "purchaseDate": "2022-03-30T21:00:00.000Z",
       "comment": "sdfa",
       "id": 3
+    },
+    {
+      "clientName": "Israel",
+      "clientId": "12345678",
+      "productType": "Budjeting Program",
+      "description": "First purchase",
+      "price": 100,
+      "paymentMethod": "1",
+      "purchaseDate": "2022-03-26T21:00:00.000Z",
+      "comment": "Good Luck",
+      "id": 4
     }
   ],
   "comments": [

@@ -13,7 +13,7 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'תוכנת מעקב';
+  title = 'CRM Program';
 
   displayedColumns: string[] = ['clientName', 'clientID', 'productType', 'description','price','paymentMethod','purchaseDate','comment','action'];
   dataSource!: MatTableDataSource<any>;
@@ -66,5 +66,9 @@ export class AppComponent implements OnInit{
   }
 
   
+  menuOptions: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
+
+  //logInDialog(){ }
+
 
 }
